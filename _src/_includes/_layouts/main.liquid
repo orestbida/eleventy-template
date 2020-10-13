@@ -1,0 +1,74 @@
+{% assign extension = " | " | append: metadata.title %}
+{% if isHomepage %} {% assign page_title = metadata.title %} {% elsif isTagPage %} {% assign page_title = renderData.title | append: extension %} {% else %} {% assign page_title = title | append: extension %}{% endif %}
+{% if noIndex %}{% assign robots_content = "noindex, nofollow" %}{% else %} {% assign robots_content = "index, follow" %} {%endif %}
+{% if description %}{% assign page_description = description %}{% else %} {% assign page_description = metadata.description %} {%endif %}
+{% if keywords %}{% assign page_keywords = keywords %}{% else %} {% assign page_keywords = metadata.keywords %} {%endif %}
+
+<!Doctype html>
+<html lang="{{ metadata.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffda30">
+    <meta name="description" content="{{ page_description }}">
+    <meta name="keywords" content="{{ page_keywords }}">
+    <meta name="robots" content="{{ robots_content }}">
+    <title>{{ page_title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:type" content="website" >
+    <meta property="og:url" content="{{ metadata.url }}{{page.url}}">
+    <meta property="og:site_name" content="{{ page_title }}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="it_IT"> 
+    <meta property="og:image" content="{{ metadata.favicon }}">
+    <meta name="author" content="{{ metadata.author }}">
+    <meta name="article:author" content="{{ metadata.author }}">
+    <link rel="icon" type="image/png" href="{{ metadata.favicon }}" />
+    <link rel="apple-touch-icon" href="{{ metadata.favicon }}" />
+    <meta name="google-site-verification" content="L6QG5qLOD1QTlnMmZ_EoBRrGRoSH4vpm06MrtpHuH3E">
+    <meta name="msvalidate.01" content="327702EB7B91ABA73D634ACB8C930711">
+    <link rel="alternate" type="application/rss+xml" href="{{ metadata.feed }}" title="{{ metadata.description }}">
+    <style>
+      {% cssInclude "_static/public/assets/css/global.css" %}
+    </style>
+    {% if criticalCss %}
+      {% for cssFileName in criticalCss %}
+        {% assign cssPath = "_static/public/assets/css/" | append: cssFileName %}
+        <style>{% cssInclude cssPath %}</style>
+      {% endfor %}
+    {% endif %}
+    {% if specificCss %}
+      {% for style in specificCss %}
+        <link rel="stylesheet" href="/public/assets/css/{{style}}" media="print" onload="this.media='all'; this.onload=null;">
+      {% endfor %}
+    {% endif %}
+    {% if metadata.prefetch_pages %}
+      {% for p_page in collections.pages %}
+          <link rel="prefetch" href="{{ metadata.url }}{{p_page.url}}">
+      {% endfor %}
+    {% endif %}
+    <link rel="manifest" href="/manifest.webmanifest">
+  </head>
+  <body>
+    <div id="_app">
+      <div id="_header_cont">
+        <div class="_max_width">
+          {% include components/header %}
+        </div>
+      </div>
+      <div id="_body_content">
+        <div class="_max_width">
+          {{ content | safe }}
+        </div>
+      </div>
+      <div id="_footer_cont">
+        <div class="_max_width">
+          {% include components/footer %}
+        </div>
+      </div>
+    </div>
+    {% include components/scripts %}
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {% for page in collections.pages %}
+    <url>
+      <loc>{{metadata.url}}{{ page.url }}</loc>
+      <priority>{% if page.data.isHomepage %}1.0{% else %}0.8{% endif %}</priority>
+      <changefreq>{% if page.data.title == "Blog" %}weekly{% else %}monthly{% endif %}</changefreq>
+    </url>
+  {% endfor %}
+  {% for post in collections.posts %}
+    <url>
+      <loc>{{metadata.url}}{{ post.url }}</loc>
+      <priority>0.5</priority>
+      <changefreq>weekly</changefreq>
+      <lastmod>{% if post.data.lastUpdated %}{% setDate post.data.lastUpdated "yyyy-mm-dd"%}{% else %}{% setDate post.date"yyyy-mm-dd"%}{% endif %}</lastmod>
+    </url>
+  {% endfor %}
+</urlset>

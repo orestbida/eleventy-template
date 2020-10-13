@@ -1,0 +1,23 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>{{metadata.title}}</title>
+        <link>{{metadata.url}}</link>
+        <description>{{metadata.description}}</description>
+		<atom:link href="{{metadata.url}}/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>{% getCurrentDate "ddd, dd mmm yyyy hh:MM:ss" %} +0200</lastBuildDate>
+        {%- for post in collections.posts %}
+            <item>
+                <title>{{post.data.title}}</title>
+                <link>{{metadata.url}}{{post.url}}</link>
+                <pubDate>{% setDate post.date "ddd, dd mmm yyyy hh:MM:ss" %} +0200</pubDate>
+                {% if post.data.description %}<description>{{ post.data.description}}</description>{% endif %}
+                <guid>{{metadata.url}}{{post.url}}</guid>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

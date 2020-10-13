@@ -1,0 +1,58 @@
+---
+layout: main
+title: Homepage
+tags: navitem
+isHomepage: true
+permalink: /
+order: 1
+---
+<style>
+    ._right_side{
+        display: inline-block; 
+        width: 50%; 
+        padding-left: 100px; 
+        vertical-align: top;
+    }
+
+    ._left_side{
+        display: inline-block; 
+        width: 50%; 
+        vertical-align: top;
+    }
+
+    @media screen and (max-width: 600px) {
+        ._right_side,
+        ._left_side{
+            display: block;
+            width: 100%;
+            padding: 0;
+        }
+    }
+</style>
+<h1>👋, I'm {{metadata.title}}</h1>
+<p>This is an 11ty starter template</p>
+<br>
+<div>
+    <div class="_left_side">
+        <h2>Starter template features</h2>
+        <ul style="list-style: revert;">
+            <li>Uses <b>liquid</b> for templating</li>
+            <li><b>Automatic minification</b> of .html, .xml && .css files</li>
+            <li>Automatic generation (rss) <b>feed.xml & sitemap.xml</b></li>
+            <li><b>Sass support</b> (with automatic compile on save)</li>
+            <li><b>PWA ready</b> for caching && offline support</li>
+            <li>Previous && next navigation for posts</li>
+            <li>Support for <b>custom date formats</b> via <a href="https://www.npmjs.com/package/dateformat" aria-label="dateFormat npm package">dateFormat npm package</a></li>
+        </ul>
+    </div>
+    <div class="_right_side">
+        <h2>All available pages</h2>
+        <ul style="list-style: revert;">
+            <li><a href="/" aria-label="home page">Homepage</a></li>
+            <li><a href="/about/" aria-label="about page">About</a></li>
+            <li><a href="/contact/" aria-label="contact page">Contact</a></li>
+            <li><a href="/blog/" aria-label="blog page">Blog</a></li>
+            <li><a href="/tags/" aria-label="all tags">All tags page</a></li>
+        </ul>
+    </div>
+</div>

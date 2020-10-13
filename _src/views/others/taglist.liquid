@@ -1,0 +1,29 @@
+---
+title: All tags
+layout: main
+eleventyExcludeFromCollections: true
+criticalCss: ['tags_pages.css']
+permalink: /tags/
+---
+
+<h1>All tags</h1>
+<ul id="_taglist">
+	{% for tag in collections.tagList %}
+		{% if tag != "pages" and tag != "posts" %}
+			<li>
+				<a href="/tags/{{ tag | slug }}/">
+					<!-- get number of posts with this tag -->
+					{% assign counter = 0 %}
+					{%- for post in collections.posts  -%}
+						{% if post.data.tags contains tag %}
+							{% assign counter = counter | plus:1 %}
+						{% endif %}
+					{%- endfor -%}
+					<!-- print number of posts with this tag -->
+					<span class="_tag_name">{{ tag }} </span>
+					<span class="_tag_counter">{{ counter }}</span>
+				</a>
+			</li>
+		{% endif %}
+	{%- endfor -%}
+</ul>

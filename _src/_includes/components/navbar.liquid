@@ -1,0 +1,12 @@
+<div id="_navbar">
+    <ul id="_navlinks">
+        {% assign items = collections.navitem | sortNavItems %}
+        {% for item in items %}
+            <li>
+                <a {% if page.url == item.url %}class="_active"{% endif %} aria-label="{{ item.data.title }}" href="{{ item.url | url}}">
+                    {{ item.data.title}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,32 @@
+{
+  "title": "hello.dev",
+  "url": "https://11ty-template.netlify.app",
+  "lang" : "en",
+  "description": "simple and fast eleventy starter template!",
+  "keywords" : "hello.dev, eleventy blog, 11ty template, eleventy starter",
+  "favicon" : "/favicon.png",
+  "author" : "hello.dev",
+  "feed" : "https://11ty-template.netlify.app/feed.xml",
+  "prefetch_pages" : true,
+  "manifest" : {
+    "name" : "hello.dev",
+    "short_name": "hello",
+    "description": "11ty starter template",
+    "start_url": "/",
+    "scope": "/",
+    "theme_color": "#ffda30",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+      {
+        "src": "/manifest-icon.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      }
+    ]
+  }
+}

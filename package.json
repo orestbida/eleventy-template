@@ -1,0 +1,33 @@
+{
+  "name": "11ty-starter-template",
+  "version": "1.0.0",
+  "description": "'Starter template for 11ty'",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --style=compressed --no-source-map _static/public/assets/scss/:_static/public/assets/css/ ",
+    "watch:eleventy": "eleventy --serve",
+    "watch:sass": "npm run sass -- --watch",
+    "dev": "npm-run-all sass --parallel watch:*",
+    "build": "npm run sass && eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "css": "^3.0.0",
+    "dateformat": "^3.0.3",
+    "eleventy-plugin-time-to-read": "^0.1.1",
+    "html-minifier": "^4.0.0",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-task-lists": "^2.1.1",
+    "minify": "^6.0.0",
+    "minify-xml": "^2.1.2",
+    "sass": "^1.27.0"
+  }
+}

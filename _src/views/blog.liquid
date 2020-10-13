@@ -1,0 +1,31 @@
+---
+layout: main
+title: Blog
+tags: navitem
+permalink: /blog/
+order: 2
+---
+
+<h1> Blog posts </h1>
+<h2 id="_blog_desc">List of random articles about tech & programming</h2>
+<div id="_posts_container">
+    <ul id="_posts">
+        {% assign sortedPosts = collections.posts | sortByDate | reverse %}
+        {% for post in sortedPosts %}
+            <li>
+                <a href="{{post.url | url}}" aria-label="{{post.data.title}}">
+                    <p class="_post_title">{{post.data.title | safe | truncateText: 67}}</p>
+                    {% if post.data.description %} 
+                        <p class="_post_summary">{{post.data.description | safe | truncateText: 80 }}</p>
+                    {% endif %}
+                    <p class="_post_date">
+                        <span class="_published_date">{% setDate post.date "dd/mm/yyyy" %}</span>
+                        {% if post.data.lastUpdated %}
+                            <span class="_last_updated">Updated: {% setDate post.data.lastUpdated "dd/mm/yyyy" %}</span>
+                        {% endif %}
+                    </p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

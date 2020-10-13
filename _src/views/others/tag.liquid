@@ -1,0 +1,30 @@
+---
+  layout: main
+  pagination: 
+    data: collections.tagList
+    size: 1
+    alias: tag
+  permalink: /tags/{{ tag | slug }}/
+  isTagPage: true
+  criticalCss: ['tags_pages.css']
+  renderData:
+    title: Tagged “{{ tag }}” 
+---
+
+<!--- 
+  "eleventyComputed" should be used in place of "renderDATA"
+  PROBLEM: can't get "eleventyComputed" to work, so for now sticking with renderData
+-->
+
+<h1>All posts with “{{ tag }}” tag</h1>
+<ul>
+{% assign sortedPosts = collections[tag] | sortByDate | reverse %}
+{% for post in sortedPosts %}
+  <li>
+    <a href="{{post.url | url}}">
+      <span class="_item_title">{{post.data.title | truncateText: 80}}</span>
+      <span class="_item_published_date">{% setDate post.date "mmmm dd, yyyy" %}</span>
+    </a>
+  </li>
+{% endfor %}
+</ul>

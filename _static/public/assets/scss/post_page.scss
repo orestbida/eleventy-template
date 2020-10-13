@@ -1,0 +1,75 @@
+#_blog_post ol, 
+#_blog_post ul {
+    padding-left: 2em;
+    list-style: revert;
+}
+
+#_blog_post a{
+    text-decoration: underline;
+}
+
+#_post_date_info{
+    margin-top: 30px;
+}
+
+#published_date{
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: .9em;
+}
+
+#_read_time {
+    color: black;
+    font-weight: 200;
+}
+
+#_blog_postul ul{
+    margin-bottom: initial;
+}
+
+#_blog_post ul li > ul{
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+#_blog_post table,
+#_blog_post tbody{
+    border-collapse: collapse;
+}
+
+#_blog_post tr,
+#_blog_post td,
+#_blog_post th{
+    padding: 5px 10px;
+    border: 1px solid #e1e3e6;
+}
+
+#_post_tags,
+#_post_suggestions{
+    border-top: 1px solid #e1e3e6;
+    padding-top: 40px;
+    margin-top: 40px;
+}
+
+#_blog_post code{
+    background: #edeff2;
+    padding: 1px 4px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+#_blog_post pre > code{
+    padding: 10px 15px;
+    display: block;
+}
+
+#_blog_post pre > code[class^="language"]{
+    background: initial;
+    padding: initial;
+}
+
+#_post_suggestions ._span_bold{
+    font-weight: bold;
+}
+
+@import 'modules/syntax.module.scss';

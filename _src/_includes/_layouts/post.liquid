@@ -1,0 +1,31 @@
+---
+layout: main
+criticalCss: ['post_page.css']
+permalink: "/blog/{{page.fileSlug | slug }}/" 
+isPost: true
+---
+
+{% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
+{% assign nextPost = collections.posts | getNextCollectionItem: page %}
+
+<div id="_blog_post">
+    <div id="_post_body">
+        {{ content | safe }}
+        <div id="_post_tags">
+            <!-- check if array has at least one element -->
+            {% if tags[0] %}
+                <p>Related tags</p>
+                <ul>
+                    {% for tag in tags %}
+                        <li><a href="/tags/{{tag | slug}}/" aria-label="{{tag}}">{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div id="_post_suggestions">
+        {% if previousPost %}<p><span class="_span_bold">Next post</span>: <a href="{{ previousPost.url | url }}" aria-label="{{ previousPost.data.title | truncateText: 60 }} article">{{ previousPost.data.title | truncateText: 90 }}</a></p>{% endif %}
+        {% if nextPost %}<p><span class="_span_bold">Previous post</span>: <a href="{{ nextPost.url | url}}" aria-label="{{ nextPost.data.title | truncateText: 60 }} article">{{ nextPost.data.title | truncateText: 90 }}</a></p>{% endif %}
+    </div>
+</div>
+

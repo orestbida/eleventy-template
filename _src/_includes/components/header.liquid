@@ -1,0 +1,19 @@
+<header id="_header">
+    <div id="_header_inner">
+        <h1 id="_title">
+            <a href="/" aria-label="{{ metadata.title }}">{{ metadata.title }}</a>
+        </h1>
+        {% include components/navbar %}
+    </div>
+    <div id="_page_title_cont">
+        <h1 id="_page_title">{{ title }}</h1>
+        {% if isPost %}
+            <div id="_post_date_info">
+                <p id="published_date">{% setDate page.date "mmm dd, yyyy"%} <span id="_read_time">- {{ content | safe | timeToRead }} read</span></p>
+                {% if lastUpdated %}
+                    <p>Last updated: {% setDate lastUpdated "mmm dd, yyyy" %}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+ </header>
