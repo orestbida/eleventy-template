@@ -3,7 +3,7 @@
 This is a starter `template` I made for my own portfolio/blog website, powered by [11ty](https://github.com/11ty/eleventy).
 
 ## Demo
-- [Netlify](https://github.com/11ty/eleventy)
+- [Netlify](https://11ty-template.netlify.app/)
 
 ## Features
 - uses **.liquid** files by default
