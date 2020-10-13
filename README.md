@@ -1,6 +1,6 @@
 # ⚡️ simple eleventy-template
 
-This is a starter `template` I made for my own portfolio/blog website, powered by [11ty](https://github.com/11ty/eleventy).
+This is a starter `template` I initially made for my own portfolio/blog website, powered by [11ty](https://github.com/11ty/eleventy). Pretty `fast` and easy to use.
 
 ## Demo
 - [Netlify](https://11ty-template.netlify.app/)
@@ -17,11 +17,11 @@ This is a starter `template` I made for my own portfolio/blog website, powered b
 ## Getting Started
 1. Clone this repository
     ```
-    git clone https://github.com/orestbida/eleventy-starter-r2.git
+    git clone git@github.com:orestbida/eleventy-template.git
     ```
 2. Navigate to the directory
     ```
-    cd eleventy-starter-r2
+    cd eleventy-template
     ```
 3. Install dependencies
     ```
