@@ -1,6 +1,6 @@
-# ⚡️ simple eleventy-template
+# 🚀 starter eleventy-template
 
-This is a starter `template` I initially made for my own portfolio/blog website, powered by [11ty](https://github.com/11ty/eleventy). Pretty `fast` and easy to use.
+This is a starter `template` I initially made for my own portfolio/blog website, powered by `eleventy`. With 11ty you can build pretty `fast` static websites and easily maintain them. For more, checkout [11ty](https://github.com/11ty/eleventy).
 
 ## Demo
 - [Netlify](https://11ty-template.netlify.app/)
