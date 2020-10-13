@@ -8,7 +8,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: sans-serif;
     color: #2b3744;
-    overflow: overlay;
 }
 
 *, body, html{
@@ -212,4 +211,5 @@ ul, li, ol{
 @import 'modules/custom_scrollbar.module.scss';
 @import 'modules/footer.module.scss';
 @import 'modules/navbar.module.scss';
+@import 'modules/fonts.module.scss';
 @import 'blog_page.scss';
