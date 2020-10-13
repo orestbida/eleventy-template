@@ -17,7 +17,7 @@ This is a starter `template` I initially made for my own portfolio/blog website,
 ## Getting Started
 1. Clone this repository
     ```
-    git clone git@github.com:orestbida/eleventy-template.git
+    git clone https://github.com/orestbida/eleventy-template.git
     ```
 2. Navigate to the directory
     ```
