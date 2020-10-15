@@ -1,18 +1,19 @@
 ---
-title: 🔖 This is post number 2
-date: 2020-10-13
+title: 🔖 This is post number 3
+date: 2020-10-14
+lastUpdated: 2020-10-15
 description: Post n.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
 tags: ['technology', 'test', 'demo']
 layout: post
 ---
 
 # This is omega!
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-<br>
-<br>
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Lorem ipsum** dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+`Excepteur` sint occaecat ~~cupidatat non proident~~, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<br>
 
 # h1 Heading
 ## h2 Heading
@@ -21,6 +22,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 ##### h5 Heading
 ###### h6 Heading
 
+<br>
 
 ## Emphasis
 
@@ -34,35 +36,45 @@ _This is italic text_
 
 ~~Strikethrough~~
 
+<br>
 
 ## Blockquotes
 
-
-> Blockquotes can also be nested...
+> **Blockquotes** can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
 
+<br>
 
 ## Lists
+Unordered && Ordered indented lists
 
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
+- `Create` a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces **`new list start`**:
+    + Ac tristique libero volutpat at
     + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
+    + Nulla volutpat aliquam velit
+      1. [x] done 1 
+      2. [x] done 2 ...
+      3. [ ] **NOT** done 3 ... ...
+    - Go back 1 level ...
+- Continuing first level list ...
+- Continuing first level + adding **sublist**
+  1. [x] console log
+      ```javascript
+      //print true
+      console.log(true);
+      ```
+  2. [x] declare variable `x = 21`
+      ```javascript
+      var x = 21;
+      ```
+  3. [ ] **NOT** done 3 ... ...
 
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
+<br>
 
 ## Code
-
 Inline `code`
 
 Indented code
@@ -88,6 +100,7 @@ var foo = function (bar) {
 
 console.log(foo(5));
 ```
+<br>
 
 ## Tables
 
