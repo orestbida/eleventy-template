@@ -67,10 +67,10 @@ Options -Indexes
 	Header set X-Content-Type-Options "nosniff"
 	Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
 	Header set Referrer-Policy "same-origin"
-  Header set Permissions-Policy "sync-xhr=('self')"
+	Header set Permissions-Policy "sync-xhr=('self')"
 	Header set Expect-CT "enforce, max-age=2592000"
 	Header set Access-Control-Allow-Origin "*"
-  # Do not disclose server header
-  Header always unset X-Powered-By
-  Header unset X-Powered-By
+	# Do not disclose server header
+	Header always unset X-Powered-By
+	Header unset X-Powered-By
 </IfModule>

@@ -1,12 +1,13 @@
 {
   "title": "hello.dev",
-  "url": "https://11ty-template.netlify.app",
+  "url": "https://redfore.altervista.org",
   "lang" : "en",
   "description": "simple and fast eleventy starter template!",
   "keywords" : "hello.dev, eleventy blog, 11ty template, eleventy starter",
   "favicon" : "/favicon.png",
   "author" : "hello.dev",
-  "feed" : "https://11ty-template.netlify.app/feed.xml",
+  "other_meta_tags" : [],
+  "feed" : "https://redfore.altervista.org/feed.xml",
   "prefetch_pages" : true,
   "manifest" : {
     "name" : "hello.dev",
