@@ -3,6 +3,7 @@
 This is a starter `template` I initially made for my own portfolio/blog website, powered by `eleventy`. With 11ty you can build pretty `fast` static websites and easily maintain them. For more, checkout [11ty](https://github.com/11ty/eleventy).
 
 ## Demo
+- [Altervista](https://redfore.altervista.org/)
 - [Netlify](https://11ty-template.netlify.app/)
 
 ## Features
@@ -12,7 +13,7 @@ This is a starter `template` I initially made for my own portfolio/blog website,
 - **Sass support** (with automatic compile on save)
 - **PWA ready** for caching && offline support
 - Previous && next navigation for posts
-- Support for **custom date formats** via dateFormat npm package
+- Support for **custom date formats** via `dateFormat` npm package
 
 ## Getting Started
 1. Clone this repository
@@ -32,3 +33,4 @@ This is a starter `template` I initially made for my own portfolio/blog website,
     ```
     npm run dev
     npm run build
+    
