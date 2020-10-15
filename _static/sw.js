@@ -1,6 +1,10 @@
 var cacheName = 'hello_v1_cache';
 var OFFLINE_URL = "/offline/";
-var cacheFiles = ["/offline/"];
+var cacheFiles = [
+	"/offline/",
+	"/public/assets/fonts/OpenSans-Bold.woff2",
+	"/public/assets/fonts/OpenSans-Regular.woff2"
+];
 
 self.addEventListener('install', function (e) {
 	e.waitUntil(caches.open(cacheName).then(function (cache) {
