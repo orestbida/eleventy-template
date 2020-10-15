@@ -5,6 +5,9 @@ const cssInline = require('css');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const time2read = require('eleventy-plugin-time-to-read');
 const dateFormat = require('dateformat');
+const markdownIt = require("markdown-it");
+const markdownItTaskLists = require("markdown-it-task-lists");
+const markdownItAttributes = require("markdown-it-attrs");
 
 module.exports = function(eleventyConfig){
   
@@ -54,6 +57,19 @@ module.exports = function(eleventyConfig){
     });
     return Array.from(tagsSet).sort();
   });
+
+  /**
+   * Add additional plugins to markdown-it
+   * markdown-it-task-lists -> to quickly create task lists (github style)
+   * markdown-it-attrs -> to quickly add a class/id to any element
+   */
+  eleventyConfig.setLibrary("md", markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItTaskLists, {
+    label: true
+  }).use(markdownItAttributes));
 
   /**
    * Helper shortcode to import css outside _includes folder
@@ -112,9 +128,11 @@ module.exports = function(eleventyConfig){
     return vals.sort((a, b) => parseInt(a.data.order) - parseInt(b.data.order));
   });
 
+  /**
+   * Truncate string
+   */
   eleventyConfig.addFilter("truncateText", function (text, n_chars_allowed) {
     if(typeof text === "string"){
-      let new_length = Math.min(text.length, n_chars_allowed);
       let new_string = text.substring(0, Math.min(text.length, n_chars_allowed));
       if( text.length > n_chars_allowed){
         // append truncation marks if string was truncated
@@ -138,13 +156,11 @@ module.exports = function(eleventyConfig){
   // Enables custom error404 page in developement
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, bs) {
-        bs.addMiddleware("*", (req, res) => {
-          const path_404 = '_site/error-pages/404/index.html';
-          const content_404 = fs.readFileSync(path_404);
+      ready: function(err, browserSync) {
+        const content_404 = fs.readFileSync('_site/error-pages/404/index.html');
+        browserSync.addMiddleware("*", (req, res) => {
           // Provide the 404 content without redirect.
           res.write(content_404);
-          // Add 404 http status code in request header.
           res.writeHead(404);
           res.end();
         });
