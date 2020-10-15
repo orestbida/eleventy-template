@@ -1,7 +1,3 @@
-#_body_content ul{
-    list-style: none;
-}
-
 #_body_content li{
     margin-bottom: 8px;
 }
@@ -97,26 +93,26 @@
 }
 
 #_posts ._published_date{
-    margin-right: 10px;
+    margin-right: 3px;
+    margin-bottom: 3px;
 }
 
 #_posts ._last_updated{
-    margin-top: 5px;
     color: #fff;
     background: #464e57;
-    display: inline;
+    display: inline-block;
 }
 
 #_posts > li > a ._post_title{
     font-size: 1.2em;
     margin-bottom: 20px;
     font-weight: bold;
-    height: 54px;
+    height: 45px;
     overflow: hidden;
 }
 
 #_posts > li > a ._post_summary{
-    height: 45px;
+    height: 39px;
     overflow: hidden;
 }
 
