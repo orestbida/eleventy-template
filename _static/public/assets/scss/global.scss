@@ -210,6 +210,12 @@ ul, li, ol{
     margin: 0;
 }
 
+@media screen and (max-width: 480px) {
+    a{
+        padding: 5px 0;
+    }
+}
+
 @import 'modules/custom_scrollbar.module.scss';
 @import 'modules/footer.module.scss';
 @import 'modules/navbar.module.scss';
