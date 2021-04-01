@@ -3,7 +3,6 @@
 This is a starter `template` I initially made for my own portfolio/blog website, powered by `eleventy`. With 11ty you can build pretty `fast` static websites and easily maintain them. For more, checkout [11ty](https://github.com/11ty/eleventy).
 
 ## Demo
-- [Altervista](https://redfore.altervista.org/)
 - [Netlify](https://11ty-template.netlify.app/)
 
 ## Features
